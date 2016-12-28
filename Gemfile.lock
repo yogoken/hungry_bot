@@ -97,8 +97,16 @@ GEM
       railties (>= 4.0, < 5.1)
     enum_help (0.0.16)
     erubis (2.7.0)
+    eventmachine (1.2.1)
     excon (0.54.0)
     execjs (2.7.0)
+    faraday (0.10.0)
+      multipart-post (>= 1.2, < 3)
+    faraday_middleware (0.10.1)
+      faraday (>= 0.7.4, < 1.0)
+    faye-websocket (0.10.5)
+      eventmachine (>= 0.12.0)
+      websocket-driver (>= 0.5.1)
     fission (0.5.0)
       CFPropertyList (~> 2.2)
     fog (1.38.0)
@@ -229,6 +237,7 @@ GEM
     font-awesome-rails (4.7.0.0)
       railties (>= 3.2, < 5.1)
     formatador (0.2.5)
+    gli (2.14.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     gretel (3.0.9)
@@ -241,6 +250,7 @@ GEM
       haml (>= 4.0.6, < 5.0)
       html2haml (>= 1.0.1)
       railties (>= 4.0.1)
+    hashie (3.4.6)
     hirb (0.7.3)
     html2haml (2.0.0)
       erubis (~> 2.7.0)
@@ -279,6 +289,7 @@ GEM
     mini_portile2 (2.0.0)
     minitest (5.10.1)
     multi_json (1.12.1)
+    multipart-post (2.0.0)
     mysql2 (0.3.21)
     nokogiri (1.6.7)
       mini_portile2 (~> 2.0.0.rc2)
@@ -362,6 +373,14 @@ GEM
       activerecord (>= 3.1)
       activesupport (>= 3.1)
     sexp_processor (4.7.0)
+    slack-ruby-client (0.7.7)
+      activesupport
+      faraday
+      faraday_middleware
+      gli
+      hashie
+      json
+      websocket-driver
     slop (3.6.0)
     spring (1.7.2)
     sprockets (3.7.0)
@@ -393,6 +412,9 @@ GEM
       binding_of_caller (>= 0.7.2)
       railties (>= 4.0)
       sprockets-rails (>= 2.0, < 4.0)
+    websocket-driver (0.6.4)
+      websocket-extensions (>= 0.1.0)
+    websocket-extensions (0.1.2)
     xml-simple (1.1.5)
     yard (0.9.5)
 
@@ -416,6 +438,8 @@ DEPENDENCIES
   devise-i18n
   dotenv-rails
   enum_help
+  eventmachine
+  faye-websocket
   fog
   font-awesome-rails
   gretel
@@ -438,6 +462,7 @@ DEPENDENCIES
   sass-rails
   sdoc
   seed-fu
+  slack-ruby-client
   spring
   therubyracer
   turbolinks
@@ -446,4 +471,4 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 BUNDLED WITH
-   1.12.5
+   1.13.6

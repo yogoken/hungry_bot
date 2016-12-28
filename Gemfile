@@ -20,7 +20,7 @@ gem 'wareki' #元号表示(平成や昭和など)に対応。案外使える
 # ユーザー機能
 gem 'devise' #ユーザー機能導入
 gem 'devise-i18n'  #devise日本語化
-# gem 'bcrypt' #パスワード暗号化機能を提供してくれる。　本番に上げる際はコメントアウトを外す。
+# gem 'bcrypt' #パスワード暗号化機能を提供してくれる。本番に上げる際はコメントアウトを外す。
 
 # 役割定義
 gem 'cancancan' #役割別に出来ること、出来ないことを定義できる。
@@ -64,6 +64,12 @@ gem 'adminlte2-rails'
 
 # サーバー
 # gem 'unicorn'  実際にunicornを使う際はコメントアウトを外す
+
+gem 'slack-ruby-client'
+
+# RTM Clientを使うとき必要
+gem 'eventmachine'
+gem 'faye-websocket'
 
 group :development, :test do
   # デバック用
