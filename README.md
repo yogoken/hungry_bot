@@ -1,11 +1,3 @@
-## 下記コマンドを順に叩く
-- cd rails_template_rep
-- rm -rf .git/
-- mv rails_template_rep ◯(新しいアプリ名)
-- git init
-- vim .gitignore(/vendor/bundle/を追加)
-- bundle install --path vendor/bundle
-- spring stop
-- bin/spring
-- bundle exec rake db:create
-- rails server
+## hungry-bot
+
+[![https://gyazo.com/b0ab2965bc2d2d7914a057975727fce1](https://i.gyazo.com/b0ab2965bc2d2d7914a057975727fce1.png)](https://gyazo.com/b0ab2965bc2d2d7914a057975727fce1)
