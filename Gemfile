@@ -71,6 +71,8 @@ gem 'slack-ruby-client'
 gem 'eventmachine'
 gem 'faye-websocket'
 
+gem 'slack-api'
+
 group :development, :test do
   # デバック用
   gem 'byebug'
