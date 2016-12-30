@@ -10,7 +10,7 @@ ActiveRecord::Base.establish_connection(config['development'])
 
 Slack.configure do |conf|
   # 先ほど控えておいたAPI Tokenをセット
-  conf.token = 'xoxb-121387490661-PZTD0UdVxdhJvKzqUr3qn6FL'
+  conf.token = 'xoxb-121387490661-o2fN1mfYNOl1qXritNMGw4ki'
 end
 
 # RTM Clientのインスタンスを生成
@@ -36,19 +36,17 @@ client.on :message do |data|
       @engineer = Engineer.first.image
       p @engineer
     end
+    @answer = Engineer.order("RAND()").first
     client.message channel: data['channel'],
-    text: "#{Engineer.order("RAND()").first(1)[0].image}"
+    text: "#{@answer.image}"
     client.on :message do |data2|
-      num = 0
-      while num < 1 do
-        if data2['text'] == 'しげさん'
-          p '正解'
-          client.message channel: data2['channel'], text: '正解!!'
-        else
-          p '不正解'
-          client.message channel: data2['channel'], text: '不正解!!'
-        end
-        num += 1
+      if data2['test'] === "#{@answer.nickname}"
+        client.message channel: data2['channel'], text: '正解！'
+        break
+      end
+      if data2['text'] != "#{@answer.nickname}" && data2['text'] != data['text'] && data2['subtype'] != 'bot_message' && data2['text'] != nil
+        client.message channel: data2['channel'], text: '残念！'
+        break
       end
     end
   end
