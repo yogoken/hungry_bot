@@ -10,7 +10,7 @@ ActiveRecord::Base.establish_connection(config['development'])
 
 Slack.configure do |conf|
   # 先ほど控えておいたAPI Tokenをセット
-  conf.token = 'xoxb-121387490661-eKLpQX2oswBnoiaAwJ7HXV52'
+  conf.token = 'xoxb-121387490661-PZTD0UdVxdhJvKzqUr3qn6FL'
 end
 
 # RTM Clientのインスタンスを生成
@@ -31,7 +31,7 @@ client.on :message do |data|
       p Shop.all
     end
     client.message channel: data['channel'], text: 'kkakiku'
-  when 'スタート' then
+  when 'start' then
     class Engineer < ActiveRecord::Base
       @engineer = Engineer.first.image
       p @engineer
